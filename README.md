@@ -1,5 +1,5 @@
 # .SpaceVim.d
-spacevim configuration  
+**spacevim configuration**  
   
 autocomplete : coc.nvim   
   
