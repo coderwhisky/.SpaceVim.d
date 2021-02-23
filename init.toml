@@ -60,6 +60,7 @@
 
 [[layers]]
 name = 'lang#java'
+# java head
 java_file_head = [
     '/**',
     ' * @Author : `fnamemodify(expand("~"),":t")`',
