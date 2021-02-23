@@ -1,0 +1,164 @@
+#=============================================================================
+# basic.toml --- basic configuration example for SpaceVim
+# Copyright (c) 2016-2020 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg at 163.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
+    colorscheme = "OceanicNext" # gruvbox onedark palenight hybrid OceanicNext
+    colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors
+    enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "arror"
+    statusline_iseparator = "bar"
+    buffer_index_type = 1
+    windows_index_type = 3
+    enable_tabline_filetype_icon = true
+    enable_statusline_mode = true
+    statusline_unicode_symbols = false
+    statusline_left_sections = ['winnr', 'major mode', 'filename', 'fileformat', 'minor mode lighters', 'version control info', 'search status']
+    statusline_right_sections = ['cursorpos', 'percentage', 'input method', 'battery status','date', 'time','search status','input status']
+
+    # guifont = "Droid Sans Mono Nerd Font"
+
+    # Enable vim compatible mode, avoid changing origin vim key bindings
+    vimcompatible = true
+    snippet_engine = 'ultisnips'
+
+    filemanager = 'nerdtree'
+    enable_vimfiler_gitstatus = true
+    filetree_direction = 'left'
+    
+    default_indent = 4
+    expand_tab = true
+    enable_googlesuggest = true
+
+    statusline_separator = 'curve'
+
+    autocomplete_method = "coc"
+    # enable_ycm = true
+
+    lint_on_the_fly = true
+
+
+[[custom_plugins]]
+  repo = "mhartington/oceanic-next"
+  mergen = 0
+
+[[custom_plugins]]
+  repo = "lilydjwg/colorizer"
+  mergen = 0
+
+[[layers]]
+name = 'lang#java'
+java_file_head = [
+    '/**',
+    ' * @Author : `fnamemodify(expand("~"),":t")`',
+    ' * @Created : `strftime("%y-%m-%d")`',
+    '**/',
+    ''
+]
+
+[[layers]]
+name = 'lang#c'
+# clang_executable = '/home/v/software/clangd_11.0.0/bin/clangd'
+enable_clang_syntax_highlight = true
+file_head = [
+    '/**',
+    ' * @Author : `fnamemodify(expand("~"),":t")`',
+    ' * @Created : `strftime("%y-%m-%d")`',
+    '**/',
+    ''
+]
+
+[[layers]]
+    name = 'lsp'
+    filetypes = [
+        "java",
+        "html",
+        "css",
+        "javascript",
+        "vue",
+        "sh",
+        "c",
+        "cpp"
+    ]
+    [layers.override_cmd]
+        c = ["clangd"]
+        java = [
+        "java",
+        "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+        "-Dosgi.bundles.defaultStartLevel=4",
+        "-Declipse.product=org.eclipse.jdt.ls.core.product",
+        "-Dlog.protocol=true",
+        "-Dlog.level=NONE",
+        "-noverify",
+        "-Xmx1G",
+        "-jar",
+        "/home/v/software/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.5.700.v20200207-2156.jar"
+        "-configuration",
+        "/home/v/software/jdt-language-server/config_linux"
+        "-data",
+        "/home/v/.cache/javalsp"
+        ]
+        vue = ['vls']
+        sh = ['bash-language-server','start']
+        javascript = ['javascript-typescript-stdio']
+        html = ['html-languageserver','--stdio']
+        css = ['css-languageserver','--stdio']
+
+[[layers]]
+name = 'lang#javascript'
+auto_fix = true
+enable_flow_syntax = true
+
+[[layers]]
+name = 'lang#vue'
+
+[[layers]]
+name = 'lang#html'
+
+# Enable autocomplete layer
+[[layers]]
+name = 'autocomplete'
+auto_completion_return_key_behavior = "complete" # complete
+auto_completion_tab_key_behavior = "smart"
+auto_completion_complete_with_key_sequence = "nil"
+auto_completion_complete_with_key_sequence_delay = 0.1
+
+name = 'programming'
+exclude = 'Raimondi/delimitMate'
+
+[[layers]]
+name = 'debug'
+name = 'lisp'
+name = 'format'
+
+name = 'tools'
+
+[[layers]]
+name = 'shell'
+default_position = 'top'
+default_height = 30
+
+[[layers]]
+name = 'colorscheme'
+# random_theme = true
+
+[[layers]]
+name = 'incsearch'
+
+[[layers]]
+name = 'VersionControl'
+
+[[layers]]
+name = 'checkers'
