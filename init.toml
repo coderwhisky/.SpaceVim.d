@@ -62,10 +62,11 @@
 name = 'lang#java'
 # java head
 java_file_head = [
-    '/**',
-    ' * @Author : `fnamemodify(expand("~"),":t")`',
-    ' * @Created : `strftime("%y-%m-%d")`',
-    '**/',
+    '/**************************************************',
+    ' * Create by Vim                                  *',
+    ' * @Author : `fnamemodify(expand("~"),":t")`      *',
+    ' * @Created : `strftime("%y-%m-%d")`              *',
+    '***************************************************/',
     ''
 ]
 
@@ -74,10 +75,11 @@ name = 'lang#c'
 # clang_executable = '/home/v/software/clangd_11.0.0/bin/clangd'
 enable_clang_syntax_highlight = true
 file_head = [
-    '/**',
-    ' * @Author : `fnamemodify(expand("~"),":t")`',
-    ' * @Created : `strftime("%y-%m-%d")`',
-    '**/',
+    '/**************************************************',
+    ' * Create by Vim                                  *',
+    ' * @Author : `fnamemodify(expand("~"),":t")`      *',
+    ' * @Created : `strftime("%y-%m-%d")`              *',
+    '***************************************************/',
     ''
 ]
 
